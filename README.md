@@ -27,6 +27,7 @@ const config = {
   repo: "awesome-web-app",
   head: "master", // optional
   base: "production", // optional
+  pr_title: "[Release] Major/Minor/Patch [...]" // optional
   template: "/path/to/template.mustache", // optional
 };
 
@@ -51,14 +52,14 @@ Also, the following environment variables can be used for the config:
 You can create a release pull request by the following command:
 
 ```sh
-❯ npx github-pr-release owner/repo --head master --base production
+❯ npx @jawang94/github-pr-release owner/repo --head master --base production
 # `GITHUB_PR_RELEASE_TOKEN` is required
 ```
 
 `--help`:
 
 ```
-❯ npx github-pr-release --help
+❯ npx @jawang94/github-pr-release --help
 Usage: github-pr-release [repo]
 
 Options:
@@ -68,7 +69,7 @@ Options:
   --base                                                 [default: "production"]
 
 Examples:
-  github-pr-release uiur/github-pr-release --head master --base production
+  github-pr-release @jawang94/github-pr-release --head master --base production
 ```
 
 ## Install
@@ -78,10 +79,6 @@ npm install github-pr-release
 ```
 
 ## Tips
-
-### Pull request titles
-
-If one of pull requests of which consist a release pull request has a title like "Bump to v1.0", the title of the release pull request becomes "Release v1.0". Otherwise, it uses timestamps like "Release 2000-01-01 00:00:00" in local timezone.
 
 ### Specify a message format
 
