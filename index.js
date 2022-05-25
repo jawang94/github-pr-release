@@ -12,7 +12,7 @@ module.exports = function createReleasePR(config) {
       var templatePath =
         config.template || path.join(__dirname, "release.mustache");
       var template = fs.readFileSync(templatePath, "utf8");
-      var message = releaseMessage(template, prs, pr_title);
+      var message = releaseMessage(template, prs, config.pr_title);
 
       client.assignReviewers(releasePR, prs);
       return client.updatePR(releasePR, message);
