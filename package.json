@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/uiur/github-pr-release.git"
+    "url": "https://github.com/jawang94/github-pr-release"
   },
   "dependencies": {
     "es6-promise": "^2.3.0",
