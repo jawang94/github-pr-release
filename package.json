@@ -6,7 +6,8 @@
   "bin": {
     "github-pr-release": "cli/index.js"
   },
-  "author": "Kazato Sugimoto",
+  "author": "Jason Wang",
+  "contributors": ["Kazato Sugimoto"],
   "license": "MIT",
   "scripts": {
     "test": "mocha --require intelli-espower-loader",
