@@ -1,6 +1,6 @@
 {
   "name": "@jawang94/github-pr-release",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "Create a release pull request by Github API",
   "main": "index.js",
   "bin": {
