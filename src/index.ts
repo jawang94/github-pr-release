@@ -10,6 +10,7 @@ interface ReleaseConfig {
   repo?: string;
   head?: string;
   base?: string;
+  pr_title?: string;
   template?: string;
   githubClient?: GithubClient;
 }
