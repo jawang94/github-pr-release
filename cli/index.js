@@ -4,7 +4,7 @@ const yargs = require("yargs/yargs");
 const { hideBin } = require("yargs/helpers");
 const argv = yargs(hideBin(process.argv))
   .usage("Usage: $0 [repo]")
-  .example("$0 uiur/github-pr-release --head dev --base master", "")
+  .example("$0 jawang94/github-pr-release --head dev --base master", "")
   .demandCommand(1)
   .default("head", "dev")
   .default("base", "master")
@@ -20,7 +20,7 @@ async function main() {
     repo,
     head: argv.head,
     base: argv.base,
-    pr_title: argv.pr_title
+    pr_title: argv.pr_title,
   };
 
   const pullRequest = await createReleasePR(config);

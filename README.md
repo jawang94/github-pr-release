@@ -6,7 +6,7 @@ Create a release pull request using GitHub API. Inspired by [git-pr-release](htt
 
 - No dependency on git. You can easily deploy it to Heroku / AWS Lambda / Google Cloud Functions etc.
 - Fast because it uses only Github API.
-- Written in JavaScript.
+- Written in TypeScript / JavaScript.
 
 [![Gyazo](http://i.gyazo.com/7484a59ade4e96ce9a015f1aa817cab8.png)](http://gyazo.com/7484a59ade4e96ce9a015f1aa817cab8)
 
@@ -52,7 +52,7 @@ Also, the following environment variables can be used for the config:
 You can create a release pull request by the following command:
 
 ```sh
-❯ npx @jawang94/github-pr-release owner/repo --head master --base production
+❯ npx @jawang94/github-pr-release owner/repo --head dev --base master
 # `GITHUB_PR_RELEASE_TOKEN` is required
 ```
 
@@ -65,11 +65,11 @@ Usage: github-pr-release [repo]
 Options:
   --help     Show help                                                 [boolean]
   --version  Show version number                                       [boolean]
-  --head                                                     [default: "master"]
-  --base                                                 [default: "production"]
+  --head                                                     [default: "dev"]
+  --base                                                 [default: "master"]
 
 Examples:
-  github-pr-release @jawang94/github-pr-release --head master --base production
+  github-pr-release @jawang94/github-pr-release --head dev --base master
 ```
 
 ## Install
@@ -98,7 +98,7 @@ The default template is below. The first line is treated as the title.
 ```mustache
 Release {{version}}
 {{#prs}}
-- [ ] #{{number}} {{title}} {{#assignee}}@{{login}}{{/assignee}}{{^assignee}}{{#user}}@{{login}}{{/user}}{{/assignee}}
+- [ ] #{{number}} {{#assignee}}@{{login}}{{/assignee}}{{^assignee}}{{#user}}@{{login}}{{/user}}{{/assignee}}
 {{/prs}}
 ```
 
@@ -109,7 +109,7 @@ If you use this plugin in GitHub Enterprise, you can specify endpoint domain for
 ```javascript
 release({
   token: 'token'
-  owner: 'uiur',
+  owner: 'jawang94',
   repo:  'awesome-web-app',
   endpoint: 'https://github.yourdomain.com/api/v3'
 })
@@ -171,6 +171,10 @@ The release flow of github-pr-release is managed with github-pr-release itself.
 
 It creates a release pull request when merging a topic branch or pushing to the main branch.
 The update can be published by merging a release pull request.
+
+See:
+
+https://github.com/uiur/github-pr-release/pulls?q=is%3Apr+is%3Aopen+Release
 
 ## License
 
